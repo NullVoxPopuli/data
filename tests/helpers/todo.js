@@ -89,10 +89,6 @@ function assertTestStatus(assert, todos) {
       result: false,
     });
   } else {
-    results.forEach(r => {
-      // r.result = true;
-    });
-
     assert.test.skip = true;
     assert.test.testReport.skipped = true;
   }
