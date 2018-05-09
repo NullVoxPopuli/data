@@ -48,6 +48,19 @@ function assertTestStatus(assert, results) {
       assert.pushResult(r);
     });
   } else {
+    // ideally we could report which assertions still fail; however, doing so
+    //   would result in testem reporting these assertions as failures, so we must
+    //   skip the test. It would be neat if we could still print something like
+    //   the below.
+    /*
+    results.forEach(r => {
+      let result = r.result;
+      r.result = true;
+      r.message = `[TODO ${result === true ? 'COMPLETED' : 'INCOMPLETE'}] ${r.message}`;
+      assert.pushResult(r);
+    });
+    */
+
     assert.test.expected = 0;
     assert.test.skip = true;
     assert.test.testReport.expected = 0;
