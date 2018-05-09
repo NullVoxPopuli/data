@@ -553,7 +553,7 @@ test('Deleting an unpersisted record via rollbackAttributes that has a hasMany r
 todo(
   'Re-loading a removed record should re add it to the relationship when the removed record is the last one in the relationship',
   function(assert) {
-    assert.expect(3);
+    assert.expect(4);
     let account, ada, byron;
 
     run(() => {
@@ -633,8 +633,8 @@ todo(
     let state = account.hasMany('users').hasManyRelationship.canonicalMembers.list;
     let users = account.get('users');
 
-    assert.equal(users.get('length'), 1, 'Accounts were updated correctly (ui state)');
-    assert.deepEqual(
+    assert.todo.equal(users.get('length'), 1, 'Accounts were updated correctly (ui state)');
+    assert.todo.deepEqual(
       users.map(r => get(r, 'id')),
       ['1'],
       'Accounts were updated correctly (ui state)'

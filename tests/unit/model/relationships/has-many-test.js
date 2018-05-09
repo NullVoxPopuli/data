@@ -1407,7 +1407,7 @@ todo(
 
     let hasManyCanonical = person.hasMany('pets').hasManyRelationship.canonicalMembers.list;
 
-    assert.deepEqual(
+    assert.todo.deepEqual(
       pets.map(p => get(p, 'id')),
       ['2', '3'],
       'relationship now has the correct current pets'
@@ -1525,7 +1525,7 @@ todo(
 
     let hasManyCanonical = person.hasMany('pets').hasManyRelationship.canonicalMembers.list;
 
-    assert.deepEqual(
+    assert.todo.deepEqual(
       pets.map(p => get(p, 'id')),
       ['2'],
       'relationship now has the correct current pets'
