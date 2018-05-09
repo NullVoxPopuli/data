@@ -4,7 +4,8 @@ import { resolve, Promise as EmberPromise } from 'rsvp';
 import { run } from '@ember/runloop';
 import { get } from '@ember/object';
 import setupStore from 'dummy/tests/helpers/store';
-import { module, test, skip as todo } from 'qunit';
+import { module, test } from 'qunit';
+import todo from '../../helpers/todo';
 import DS from 'ember-data';
 
 const { attr, hasMany } = DS;
@@ -552,6 +553,7 @@ test('Deleting an unpersisted record via rollbackAttributes that has a hasMany r
 todo(
   'Re-loading a removed record should re add it to the relationship when the removed record is the last one in the relationship',
   function(assert) {
+    assert.expect(3);
     let account, ada, byron;
 
     run(() => {
